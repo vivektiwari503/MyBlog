@@ -10,16 +10,15 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 
 import java.util.Date;
 
-@ControllerAdvice   //if we did not use this annotation then this class does not act like try catch block
-// whatever the exception will occur in controller layer that comes here
+@ControllerAdvice 
 public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
-    @ExceptionHandler(ResourceNotFoundException.class)//specific Exception
+    @ExceptionHandler(ResourceNotFoundException.class)
     public ResponseEntity<ErrorDetails>
     handleResourceNotFoundException(ResourceNotFoundException exception,
                                     WebRequest webRequest){
         ErrorDetails errorDetails = new ErrorDetails(new Date(), exception.getMessage(),
-                webRequest.getDescription(false));//to get the getdescription we need webrequest
+                webRequest.getDescription(false));
         return new ResponseEntity<>(errorDetails, HttpStatus.NOT_FOUND);
     }
     @ExceptionHandler(Exception.class)//GlobalException
