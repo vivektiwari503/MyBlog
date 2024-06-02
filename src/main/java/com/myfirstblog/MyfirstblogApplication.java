@@ -10,6 +10,7 @@ public class MyfirstblogApplication {
 
 	@Bean
 	public ModelMapper modelMapper(){
+
 		return new ModelMapper();
 	}
 

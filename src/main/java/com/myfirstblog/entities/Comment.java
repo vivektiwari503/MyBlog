@@ -24,7 +24,9 @@ import javax.persistence.*;
         @ManyToOne(fetch = FetchType.LAZY)
         @JoinColumn(name = "post_id", nullable = false)
         private Post post;//one that's why we did not use list here
-
+//how are you
+    //good
+    //where
 
     }
 

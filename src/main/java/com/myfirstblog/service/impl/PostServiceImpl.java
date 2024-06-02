@@ -7,6 +7,9 @@ import com.myfirstblog.payload.PostResponse;
 import com.myfirstblog.repositories.PostRepository;
 import com.myfirstblog.service.PostService;
 import org.modelmapper.ModelMapper;
+import org.slf4j.ILoggerFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
@@ -18,6 +21,7 @@ import java.util.stream.Collectors;
 @Service
 public class PostServiceImpl implements PostService {//it acts like @autowired and we right click & click on generate & constructor
 
+    private static final Logger logger = LoggerFactory.getLogger(PostServiceImpl.class);
     private PostRepository postRepository;
     private ModelMapper mapper;
 
